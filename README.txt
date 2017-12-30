@@ -1,3 +1,2 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/agdg/pen/gogxmo.
-
- 
+if PC : Mouseover change MainImage
+if Mobile : Tap change MainImage
