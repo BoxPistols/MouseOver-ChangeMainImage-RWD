@@ -8,6 +8,7 @@ $bkp: 768px;
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   padding: 40px;
+  overflow-x: hidden;
   @media only screen and (max-width: $bkp) {
     padding: 5px;
   }
@@ -71,17 +72,26 @@ img:not(.main):hover {
       flex-wrap: wrap;
       margin: auto;
       @media only screen and (max-width: $bkp) {
-        max-width: 100%;
+        display: table;
+        table-layout: fixed;
+        min-width: 200%;
+        margin-top: 10px;
       }
 
       li {
         max-width: calc((100% / 3) - 0px);
+        @media only screen and (max-width: $bkp) {
+          display: table-cell;
+        }
 
         img {
           max-width: calc(100% - 2px);
           height: auto;
           border: 1px solid #999;
           padding: 3px;
+          @media only screen and (max-width: $bkp) {
+            width: calc(100% - 10px) ;
+          }
         }
       }
     }
