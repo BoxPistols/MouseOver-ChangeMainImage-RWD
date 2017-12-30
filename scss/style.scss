@@ -1,0 +1,49 @@
+$width: 400px;
+* {
+  box-sizing: border-box;
+}
+.wrap {
+  margin: auto;
+  padding: 40px;
+  width: $width;
+  // background-color: #eee;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img:not(.main):hover {
+  opacity: 0.8;
+}
+.gallery {
+  margin: auto;
+  width: $width;
+  height: auto;
+
+  .mainImage {
+    img {
+      width: ($width - 2px);
+      height: ($width - 2px);
+      border: 2px solid #333;
+    }
+  }
+  .imageList {
+    ul {
+      width: $width;
+      display: flex;
+      justify-content: space-between;
+      // align-items: flex-end;
+      flex-wrap: wrap;
+
+      li {
+        width: calc((100% / 3) - 1px);
+        img {
+          width: calc(100% - 2px);
+          height: auto;
+          border: 2px solid #333;
+        }
+      }
+    }
+  }
+}
