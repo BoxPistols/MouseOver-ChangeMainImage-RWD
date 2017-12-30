@@ -5,10 +5,6 @@
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   overflow-x: hidden; }
-  @media only screen and (max-width: 768px) {
-    body {
-      padding: 5px;
-      overflow-x: hidden; } }
 
 h1 {
   text-align: center;
@@ -40,11 +36,12 @@ img:not(.main):hover {
   opacity: 0.8; }
 
 .gallery {
-  padding: 10px;
-  max-width: 400px;
+  padding: 20px 0;
+  max-width: 420px;
   width: 100%;
   width: 100%;
   height: auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,28 +50,44 @@ img:not(.main):hover {
     .gallery {
       display: flex;
       justify-content: center;
-      align-items: center; } }
+      align-items: center;
+      max-width: auto;
+      padding: 5px;
+      width: 100%; } }
   .gallery .mainImage {
-    max-width: 388px;
-    max-height: 388px;
-    width: auto;
-    height: auto; }
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-width: 768px) {
+      .gallery .mainImage {
+        max-width: 100%;
+        width: 100%;
+        max-height: auto;
+        height: auto;
+        width: auto; } }
     .gallery .mainImage img {
-      max-width: 384px;
-      max-height: 384px;
+      max-width: 398px;
+      max-height: 398px;
       width: 100%;
       margin: auto;
       border: 1px solid #999;
-      padding: 4px; }
+      padding: 8px; }
       @media only screen and (max-width: 768px) {
         .gallery .mainImage img {
-          max-width: 400px;
-          max-height: 400px;
+          max-width: 100%;
           width: 100%;
+          max-height: auto;
           height: auto; } }
   @media only screen and (max-width: 768px) {
     .gallery .imageList {
-      overflow-x: scroll; } }
+      verflow-x: scroll;
+      width: 100%;
+      display: block; } }
   .gallery .imageList ul {
     max-width: 400px;
     display: flex;
@@ -84,10 +97,9 @@ img:not(.main):hover {
     margin: auto; }
     @media only screen and (max-width: 768px) {
       .gallery .imageList ul {
-        display: table;
-        table-layout: fixed;
-        min-width: 300%;
-        margin-top: 10px; } }
+        display: block;
+        min-width: 100%;
+        overflow-x: scroll; } }
     .gallery .imageList ul li {
       max-width: calc((100% / 3) - 0px); }
       @media only screen and (max-width: 768px) {
@@ -100,8 +112,10 @@ img:not(.main):hover {
         padding: 3px; }
         @media only screen and (max-width: 768px) {
           .gallery .imageList ul li img {
-            min-width: 60px;
-            max-width: 160px;
-            width: calc(100% - 20px); } }
+            min-width: 40px;
+            max-width: 120px;
+            width: auto;
+            max-height: 120px;
+            margin-right: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

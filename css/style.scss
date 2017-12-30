@@ -21,10 +21,7 @@ $imgHeight: 400px;
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   overflow-x: hidden;
-  @media only screen and (max-width: $bkp) {
-    padding: 5px;
-    overflow-x: hidden;
-  }
+  @media only screen and (max-width: $bkp) {}
 }
 
 h1 {
@@ -57,45 +54,52 @@ img:not(.main):hover {
 }
 
 .gallery {
-  padding: 10px;
-  max-width: $imgWidth;
+  padding: 20px 0;
+  max-width: $imgWidth + 20px;
   width: 100%;
   // width: calc(100% + 40px);
   width: 100%;
   height: auto;
+  margin: auto;
   @include fx_center;
   flex-direction: column;
   @media only screen and (max-width: $bkp) {
     @include fx_center;
+    max-width: auto;
+    padding: 5px;
+    width: 100%;
   }
 
   .mainImage {
-    max-width: $imgWidth - 12px;
-    max-height: $imgHeight - 12px;
-    width: auto;
+    max-width: $imgWidth - 0px;
+    max-height: $imgHeight - 0px;
+    width: 100%;
     height: auto;
-
-    @media only screen and (max-width: $bkp) {}
+    margin-bottom: 10px;
+    @include fx_center;
+    @media only screen and (max-width: $bkp) {
+      @include maxW-100_H-auto;
+      width: auto;
+    }
 
     img {
-      max-width: $imgWidth - 16px;
-      max-height: $imgHeight - 16px;
+      max-width: $imgWidth - 2px;
+      max-height: $imgHeight - 2px;
       width: 100%;
       margin: auto;
       border: 1px solid #999;
-      padding: 4px;
+      padding: 8px;
       @media only screen and (max-width: $bkp) {
-        max-width: $imgWidth;
-        max-height: $imgHeight;
-        width: 100%;
-        height: auto;
+        @include maxW-100_H-auto;
       }
     }
   }
 
   .imageList {
     @media only screen and (max-width: $bkp) {
-      overflow-x: scroll;
+      verflow-x: scroll;
+      width: 100%;
+      display: block;
     }
 
     ul {
@@ -106,10 +110,10 @@ img:not(.main):hover {
       flex-wrap: wrap;
       margin: auto;
       @media only screen and (max-width: $bkp) {
-        display: table;
-        table-layout: fixed;
-        min-width: 300%;
-        margin-top: 10px;
+        display: block;
+        min-width: 100%;
+        overflow-x: scroll;
+        // margin: 10px auto;
       }
 
       li {
@@ -124,9 +128,12 @@ img:not(.main):hover {
           border: 1px solid #999;
           padding: 3px;
           @media only screen and (max-width: $bkp) {
-            min-width: 60px;
-            max-width: 160px;
-            width: calc(100% - 20px);
+            min-width: 40px;
+            max-width: 120px;
+            width: auto;
+            // width: calc(100% - 10px);
+            max-height: 120px;
+            margin-right: 5px;
           }
         }
       }
