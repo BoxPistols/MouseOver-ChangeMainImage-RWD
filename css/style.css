@@ -4,51 +4,74 @@
 
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  padding: 40px;
   overflow-x: hidden; }
   @media only screen and (max-width: 768px) {
     body {
-      padding: 5px; } }
+      padding: 5px;
+      overflow-x: hidden; } }
 
 h1 {
   text-align: center;
   font-size: 2rem;
-  line-height: 2; }
+  line-height: 2;
+  border-bottom: 1px solid #999;
+  width: auto;
+  max-width: 400px;
+  text-align: center;
+  display: block;
+  margin: 0 auto 20px; }
   @media only screen and (max-width: 768px) {
     h1 {
       font-size: 1.4rem; } }
 
 .wrap {
   margin: auto;
-  max-width: 400px;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  max-width: 440px;
+  width: 100%;
+  background-color: #eee; }
   @media only screen and (max-width: 768px) {
     .wrap {
-      max-width: 100%; } }
+      max-width: 100%;
+      width: 100%;
+      max-height: auto;
+      height: auto; } }
 
 img:not(.main):hover {
   opacity: 0.8; }
 
 .gallery {
-  margin: auto;
+  padding: 10px;
   max-width: 400px;
-  width: auto;
-  height: auto; }
+  width: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
   @media only screen and (max-width: 768px) {
     .gallery {
-      max-width: 100%; } }
-  .gallery .mainImage img {
-    max-width: 398px;
-    max-height: 398px;
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
+  .gallery .mainImage {
+    max-width: 388px;
+    max-height: 388px;
     width: auto;
-    border: 1px solid #999;
-    padding: 3px; }
-    @media only screen and (max-width: 768px) {
-      .gallery .mainImage img {
-        max-width: 100%; } }
+    height: auto; }
+    .gallery .mainImage img {
+      max-width: 384px;
+      max-height: 384px;
+      width: 100%;
+      margin: auto;
+      border: 1px solid #999;
+      padding: 4px; }
+      @media only screen and (max-width: 768px) {
+        .gallery .mainImage img {
+          max-width: 400px;
+          max-height: 400px;
+          width: 100%;
+          height: auto; } }
   @media only screen and (max-width: 768px) {
     .gallery .imageList {
       overflow-x: scroll; } }
@@ -63,7 +86,7 @@ img:not(.main):hover {
       .gallery .imageList ul {
         display: table;
         table-layout: fixed;
-        min-width: 200%;
+        min-width: 300%;
         margin-top: 10px; } }
     .gallery .imageList ul li {
       max-width: calc((100% / 3) - 0px); }
@@ -77,6 +100,8 @@ img:not(.main):hover {
         padding: 3px; }
         @media only screen and (max-width: 768px) {
           .gallery .imageList ul li img {
-            width: calc(100% - 10px); } }
+            min-width: 60px;
+            max-width: 160px;
+            width: calc(100% - 20px); } }
 
 /*# sourceMappingURL=style.css.map */
