@@ -1,142 +1,169 @@
 @charset "UTF-8";
+
 $bkp: 768px;
 $imgWidth: 400px;
 $imgHeight: 400px;
+
 @mixin fx_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin maxW-100_H-auto {
-  max-width: 100%;
-  width: 100%;
-  max-height: auto;
-  height: auto;
+    max-width: 100%;
+    width: 100%;
+    max-height: auto;
+    height: auto;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  overflow-x: hidden;
-  @media only screen and (max-width: $bkp) {}
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    overflow-x: hidden;
+    background-color: #eee;
+
+    @media only screen and (max-width: $bkp) {}
 }
 
 h1 {
-  text-align: center;
-  font-size: 2rem;
-  line-height: 2;
-  border-bottom: 1px solid #999;
-  width: auto;
-  max-width: 400px;
-  text-align: center;
-  display: block;
-  margin: 0 auto 20px;
-  @media only screen and (max-width: $bkp) {
-    font-size: 1.4rem;
-  }
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2;
+    border-bottom: 1px solid #999;
+    width: auto;
+    max-width: 400px;
+    text-align: center;
+    display: block;
+    margin: 20px auto 20px;
+
+    @media only screen and (max-width: $bkp) {
+        font-size: 1.4rem;
+    }
 }
 
 .wrap {
-  margin: auto;
-  max-width: $imgWidth + 40px;
-  width: 100%;
-  background-color: #eee;
-  @media only screen and (max-width: $bkp) {
-    @include maxW-100_H-auto;
-  }
+    margin: auto;
+    max-width: $imgWidth + 40px;
+    width: 100%;
+
+    @media only screen and (max-width: $bkp) {
+        @include maxW-100_H-auto;
+
+        height: 100vh;
+    }
 }
 
 img:not(.main):hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .gallery {
-  padding: 20px 0;
-  max-width: $imgWidth + 20px;
-  width: 100%;
-  // width: calc(100% + 40px);
-  width: 100%;
-  height: auto;
-  margin: auto;
-  @include fx_center;
-  flex-direction: column;
-  @media only screen and (max-width: $bkp) {
-    @include fx_center;
-    max-width: auto;
-    padding: 5px;
+    padding: 20px 0;
+    max-width: $imgWidth + 20px;
     width: 100%;
-  }
 
-  .mainImage {
-    max-width: $imgWidth - 0px;
-    max-height: $imgHeight - 0px;
+    // width: calc(100% + 40px);
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin: auto;
+
     @include fx_center;
+
+    flex-direction: column;
+
     @media only screen and (max-width: $bkp) {
-      @include maxW-100_H-auto;
-      width: auto;
+        @include fx_center;
+
+        max-width: auto;
+        padding: 5px;
+        width: 100%;
     }
 
-    img {
-      max-width: $imgWidth - 2px;
-      max-height: $imgHeight - 2px;
-      width: 100%;
-      margin: auto;
-      border: 1px solid #999;
-      padding: 8px;
-      @media only screen and (max-width: $bkp) {
-        @include maxW-100_H-auto;
-      }
-    }
-  }
+    .mainImage {
+        max-width: $imgWidth - 0px;
+        max-height: $imgHeight - 0px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
 
-  .imageList {
-    @media only screen and (max-width: $bkp) {
-      verflow-x: scroll;
-      width: 100%;
-      display: block;
-    }
+        @include fx_center;
 
-    ul {
-      max-width: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin: auto;
-      @media only screen and (max-width: $bkp) {
-        display: block;
-        min-width: 100%;
-        overflow-x: scroll;
-        // margin: 10px auto;
-      }
-
-      li {
-        max-width: calc((100% / 3) - 0px);
         @media only screen and (max-width: $bkp) {
-          display: table-cell;
+            @include maxW-100_H-auto;
+
+            width: auto;
         }
 
         img {
-          max-width: calc(100% - 2px);
-          height: auto;
-          border: 1px solid #999;
-          padding: 3px;
-          @media only screen and (max-width: $bkp) {
-            min-width: 40px;
-            max-width: 120px;
-            width: auto;
-            // width: calc(100% - 10px);
-            max-height: 120px;
-            margin-right: 5px;
-          }
+            max-width: $imgWidth - 2px;
+            max-height: $imgHeight - 2px;
+            width: 100%;
+            margin: auto;
+            border: 1px solid #999;
+            padding: 8px;
+
+            @media only screen and (max-width: $bkp) {
+                @include maxW-100_H-auto;
+            }
         }
-      }
     }
-  }
+
+    .imageList {
+        @media only screen and (max-width: $bkp) {
+            verflow-x: scroll;
+            width: 100%;
+            display: block;
+        }
+
+        ul {
+            max-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: auto;
+
+            @media only screen and (max-width: $bkp) {
+                display: block;
+                min-width: 100%;
+                overflow-x: scroll;
+
+                // margin: 10px auto;
+            }
+
+            li {
+                max-width: calc((100% / 3) - 6px);
+                margin: 3px 2px;
+
+                @media only screen and (max-width: $bkp) {
+                    display: table-cell;
+                }
+
+                img {
+                    max-width: calc(100% - 2px);
+                    height: auto;
+                    border: 1px solid #999;
+                    padding: 3px;
+
+                    &.on {
+                        background-color: skyblue;
+                    }
+
+                    @media only screen and (max-width: $bkp) {
+                        min-width: 40px;
+                        max-width: 120px;
+                        width: auto;
+
+                        // width: calc(100% - 10px);
+                        max-height: 120px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
 }
